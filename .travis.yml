@@ -7,6 +7,7 @@ git:
   depth: 1
 node_js:
 - '0.12'
+- '4.4'
 cache:
   directories:
   - "~/.meteor"
@@ -16,6 +17,9 @@ install:
 - export PATH="$HOME/.meteor:$PATH"
 before_script:
 - mkdir /tmp/build
+- nvm use 4.4
+- npm install
+- npm run lint
 script:
 - meteor build /tmp/build
 before_deploy:
